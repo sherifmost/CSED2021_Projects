@@ -1,0 +1,67 @@
+# depslib dependency file v1.0
+1556207080 source:c:\users\hp\desktop\pass1\pass1.c
+	<iostream>
+	<algorithm>
+	<string>
+	<fstream>
+	<vector>
+	<map>
+	<bits/stdc++.h>
+	<math.h>
+	<iomanip>
+
+1556208712 source:f:\projects\pass1\pass1.c
+	<iostream>
+	<algorithm>
+	<string>
+	<fstream>
+	<vector>
+	<map>
+	<bits/stdc++.h>
+	<math.h>
+	<iomanip>
+
+1556209714 source:f:\projects\pass1\pass1.cpp
+	<iostream>
+	<algorithm>
+	<string>
+	<fstream>
+	<vector>
+	<map>
+	<bits/stdc++.h>
+	<math.h>
+	<iomanip>
+
+1556213481 source:c:\users\hp\desktop\pass1\pass1\pass1.cpp
+	<iostream>
+	<algorithm>
+	<string>
+	<fstream>
+	<vector>
+	<map>
+	<bits/stdc++.h>
+	<math.h>
+	<iomanip>
+
+1556282302 source:c:\users\hp\desktop\pass1\pass1.cpp
+	<iostream>
+	<algorithm>
+	<string>
+	<fstream>
+	<vector>
+	<map>
+	<bits/stdc++.h>
+	<math.h>
+	<iomanip>
+
+1560644530 source:e:\faculty\second year - second term\system programming\project\assembly1\pass1\pass1.cpp
+	<iostream>
+	<algorithm>
+	<string>
+	<fstream>
+	<vector>
+	<map>
+	<bits/stdc++.h>
+	<math.h>
+	<iomanip>
+

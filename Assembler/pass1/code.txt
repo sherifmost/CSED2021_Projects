@@ -1,0 +1,18 @@
+.2345678901234567890
+prog     start   1000
+         lda     alpha
+loop     resb    1000
+         sta     temp
+         lda     gamma
+         lda     loop
+aa       equ     1744
+aaa      lda     =w'3'
+         lda     aa
+         add     temp
+         sta     alpha
+         j       *
+alpha    resw    #1
+temp     resw    1
+         word    5
+gamma    word    5
+         end    

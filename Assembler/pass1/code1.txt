@@ -1,0 +1,42 @@
+.234567890123456789
+prog     start   0
+         ldx     #0
+         lda     #0
+inloop   td      indev
+         jeq     inloop
+.         org     inloop
+         lda     =w'20'
+         lds     =w'20'
+         lda     =c'144'
+         lda     =x'f4a23e'
+         rd      indev
+         comp    #4    
+         ltorg
+         jeq     loop
+         stch    data,x
+         tix     max
+         j       inloop
+loop     lda     #0
+         stx     len
+         lda     len
+         sub     #1
+         sta     len
+         ldx     len
+         ldch    data,x
+outloop  td      outdev
+         jeq     outloop
+         wd      outdev
+gg       equ     max-100
+         lda     len
+         comp    #0
+dd       equ     100-max
+         jgt     loop
+         j       *
+bb       equ     data-max
+data     resb    100
+max      word    100
+len      resw    1
+aa       equ     data-max
+indev    byte    X'F3'
+outdev   byte    X'05' 
+         end
