@@ -1,0 +1,42 @@
+# depslib dependency file v1.0
+1512858634 source:c:\users\lenovo\desktop\the project\dots and boxes game\main.c
+	<stdio.h>
+	<stdlib.h>
+	"main_game_functions.h"
+
+1513769310 c:\users\lenovo\desktop\the project\dots and boxes game\main_game_functions.h
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<dos.h>
+	<dir.h>
+	<conio.h>
+	<time.h>
+
+1513774708 source:c:\users\lenovo\desktop\the project\dots and boxes game\main_game_functions.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<dos.h>
+	<dir.h>
+	<conio.h>
+	<time.h>
+	"main_game_functions.h"
+
+1512525186 c:\users\lenovo\desktop\the project\dots and boxes game\game_expert.h
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<dos.h>
+	<dir.h>
+	<conio.h>
+
+1512525965 source:c:\users\lenovo\desktop\the project\dots and boxes game\game_expert.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<dos.h>
+	<dir.h>
+	<conio.h>
+	"main_game_functions.h"
+
