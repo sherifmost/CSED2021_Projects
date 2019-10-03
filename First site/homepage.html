@@ -1,0 +1,179 @@
+
+<html>
+<head>
+<title>UpToWork</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="icon" type="image/jpg" href="download.jpg"/>
+</head>
+
+<body>
+	<div class="meta">
+		<div class="metalinks">
+			<a href="homepage.html"><img src="images/meta1.gif" alt="" width="15" height="14" /></a>
+			<a href="about.html"><img src="images/qm.png" alt="" width="17" height="14" /></a>
+			<a href="loginemployer.html"><img src="images/meta4.gif" alt="" width="15" height="14" /></a>
+		</div>
+																																									
+	</div>
+	<div id="header">
+		<a  class="logo"><img src="images/Logo.png" alt="setalpm" width="149" height="30" /></a>                                                                                                                                                                                                                                      
+		<span class="slogan" >Your Key to Success !</span>
+		<ul id="menu">
+			<li><a href="homepage.html">Home</a></li>
+			<li class="emp"><a href="loginemployer.html">Employer</a></li>
+			<li><a href="about.html">About Us</a></li>
+			
+			<li class="last"><a href="register.html">Register</a></li>
+		</ul>
+		<img src="images/office-lidi.jpg" alt="" width="892" height="300" />
+	</div>
+
+	<div id="content">
+		<div class="search">
+			<form action="ApplyForm.html">
+               <button class="button apply" >Apply Now</button>
+		</form>
+        <form action="login.html">
+            <button class="button add"  >Add A Job</button>        
+        	</form>
+            </div>
+		<div id="blocks">																																																																																																																													
+			<div class="block">
+				<img src="images/title1.gif" alt="" width="213" height="29"style ="position: relative;top: -6px;" /><br />
+				<?php
+include "connectdb.php";
+
+$qu = "SELECT * FROM (
+    SELECT * FROM employeeform WHERE Decision ='1' ORDER BY id DESC LIMIT 7
+) sub
+ORDER BY id DESC";
+$res = $conn->query($qu);
+$query = "SELECT * FROM (
+    SELECT * FROM companyform ORDER BY id DESC LIMIT 8
+) sub
+ORDER BY id ASC";
+ $result = $conn->query($query);
+?>
+    
+                <?php
+            while($ro = $res->fetch_assoc()){
+                ?>
+                <table style ="position: relative;left: 30px;top: 11px;font-weight: bold;color:dimgray;font-size: 14px;">
+                    
+                   <?php
+                   $temp=" ";
+                     echo '<tr>
+					<td>'.$ro['FirstName'].''.$temp.''.$ro['LastName'].'</td>
+				</tr>';
+                        ?>
+                     <?php
+            }
+            ?>
+                                   <!--tr>
+                                   <td><a href="#">Maecenas hendrerit</a></td>
+                                   </tr>
+                                   <tr>
+                                   <td><a href="#">Massa ac laoreet iaculipede</a></td>
+                                   </tr>
+                                   <tr>
+                                   <td><a href="#">Convallis nonummy tellus</a></td>
+                                   </tr>
+                                   <tr>
+                                   <td><a href="#">In tincidunt mauris</a></td>
+                                   </tr>
+                                   <tr>
+                                   <td><a href="#">Consectetuer feipsum eget</a></td>
+                                   </tr-->
+                </table>
+
+  
+				
+			</div>
+			<div class="block">
+				<img src="images/title2.gif" alt="" width="214" height="29" /><br />
+				<p class="red_text">There's plenty of stale career advice out there: Go the extra mile. Do what you love. Always be the first one there and the last to leave.
+But a recent Quora thread, "What are a few pieces of unique career advice that nobody ever mentions?", provides something different: valuable career advice that we haven't heard a million times before.
+
+<span class="end">Here are 13 of the best responses:</span></p>
+				<a href="advice.html" class="more"><img src="images/morer.jpg" alt="" width="105" height="27"style="position: relative;top:-6px;" /></a>
+			</div>
+			<div class="block">
+				<img src="images/title3.gif" alt="" width="213" height="29" /><br />
+                <?php
+            while($row = $result->fetch_assoc()){
+                ?>
+				<table style ="position: relative;left: 10px;top: 13px;font-weight: bold;color:indigo; font-size: 12px;">
+                    
+                     <?php
+                     $temp=" in ";
+                     echo '<tr>
+					<td>'.$row['Position'].''.$temp.''.$row['Name'].'</td>
+				</tr>';
+                        ?>
+                     <?php
+            }
+            ?>
+                 
+                                   
+                </table>
+				<a href="alljobs.php" class="more"><img src="images/moreg.jpg" alt="" width="106" height="27"style="position: absolute;top: 667px;" /></a>
+			</div>
+			<div class="block">
+				<img src="images/resume.png" alt="" width="213" height="40" style="position: relative; top: -6px;"/><br />
+                <p class="gray_text" style="position: relative;top: -13px;">Don't have a resume yet?<br><a href="https://www.visualcv.com"style="text-decoration: none;"class="resumetitle">create one now</a> using one of our partner sites.<br>A resume is an esential prerequisite for appying in any job.</p>
+				
+			</div>
+		</div>
+		<div id="info">
+			<div>
+				<img src="images/title5.gif" alt="" width="150" height="24" style="position: relative;top:-5px;" />
+				<br><br><br>
+                emails :<br>sherif.most98@gmail.com<br>
+                        ahmedaliworks@gmail.com<br>
+                        hazemmorsi14@gmail.com<br><br>
+                telephone:<br>01061417049
+           </div>
+			<div>
+				<img src="images/title6.gif" alt="" width="160" height="26" />
+				<ul>
+					<li><a target="_blank" href="https://www.coursera.org/courses?languages=en">coursera</a></li>
+					<li><a target="_blank" href="https://www.edx.org/">edx</a></li>
+					<li><a target="_blank" href="http://www.openuniversity.edu/">The Open University</a></li>
+					<li><a target="_blank" href="https://in.udacity.com/">Udacity</a></li>
+					<li><a target="_blank" href="https://alison.com/courses">Alison</a></li>
+					<li><a target="_blank" href="https://www.careers.govt.nz/courses/">careersnz</a></li>
+				</ul>
+			</div>
+			<div>
+				<img src="images/title7.gif" alt="" width="160" height="26" />
+				<ul>
+				<li><a target="_blank" href="http://www.internships.com/">internships.com</a></li>
+					<li><a target="_blank" href="https://www.linkedin.com/?trk=nav_logo">LinkedIn</a></li>
+					<li><a target="_blank" href="https://eg.indeed.com/?r=us">Indeed</a></li>
+					<li><a target="_blank" href="https://www.glassdoor.com/index.htm">GlassDoor</a></li>
+					<li><a target="_blank" href="http://www.youtern.com/">Youtern</a></li>
+					<li><a target="_blank" href="https://graduateland.com/">GladuateLand</a></li>
+					<li><a target="_blank" href="https://www.idealist.org/en/?radius=40000&type=ALL">Idealist</a></li>
+				</ul>
+			</div>
+			<div>
+				<img src="images/title8.gif" alt="" width="160" height="26" />
+				<ul >
+					<li><a href="https://www.jobzella.com/search/all/jobs?gclid=Cj0KCQjwtZzWBRD2ARIsAIPenY0MhJkvC622aRHV6XUBMsFQIKxKA_UGpzHicyvFObFHswrc-jZmaSsaArGwEALw_wcB">Jobzilla</a></li>
+					<li><a href="https://www.expatriates.com/classifieds/egt/jobs/?gclid=Cj0KCQjwtZzWBRD2ARIsAIPenY34WKDxk1pk7Xf1snpUdtZX5Sby0VXmumFCwir_5n6SehZS65AXocEaAjaQEALw_wcB">Expatriates</a></li>
+					<li><a href="https://wuzzuf.net/a/Jobs-in-Egypt?gclid=Cj0KCQjwtZzWBRD2ARIsAIPenY3XmXTZUacyW7kqUCsd7eLY3aJmPbqzZ8EKzRBV9CSGFZSsg_S7aEgaAolMEALw_wcB">Wuzzuf</a></li>
+					<li><a href="https://tenlivegroup.com/">tenlivegroup</a></li>
+					<li><a href="https://www.thebalance.com/salaries-for-jobs-a-z-list-2063402">thebalance</a></li>
+					<li><a href="https://jobs.goabroad.com/">jobs.goabroad</a></li>
+					<li><a href="http://www.overseasjobs.com/">overseasjobs</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div id="footer">																																																 
+	@Team 3
+    </div>
+</body>
+</html>
+

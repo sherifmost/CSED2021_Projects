@@ -1,0 +1,121 @@
+<html>
+<head>
+<title>UpToWork</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" type="text/css" href="style.css" />
+  <link rel="icon" type="image/jpg" href="download.jpg"/>
+
+    </head>
+    
+    <?php include "connectdb.php"; ?>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+    function getName(val)
+    {
+       $.ajax({
+          type:"POST", 
+          url:"getname.php", 
+          data:'Field='+val,
+          success:function(data){
+                $("#name_list").html(data);
+              
+       }   
+       });
+        
+        
+    }
+        
+    function getPosition(val)
+    {
+       $.ajax({
+          type:"POST", 
+          url:"getposition.php", 
+          data:'Name='+val,
+          success:function(data){
+                $("#position_list").html(data);
+              
+       }   
+       });
+        
+        
+    }    
+    
+    
+    </script>
+
+
+<body id="pageapply">
+	<div class="meta">
+		<div class="metalinks">
+			<a href="homepage.html"><img src="images/meta1.gif" alt="" width="15" height="14" /></a>
+			<a href="about.html"><img src="images/qm.png" alt="" width="17" height="14" /></a>
+			<a href="loginemployer.html"><img src="images/meta4.gif" alt="" width="15" height="14" /></a>
+		</div>
+																																											
+	</div>
+	<div id="header">
+		<a  class="logo"><img src="images/Logo.png" alt="setalpm" width="149" height="30" /></a>                                                                                                                                                                                                                                      
+		<span class="slogan" >Your Key to Success !</span>
+		<ul id="menu">
+			<li><a href="homepage.html">Home</a></li>
+			<li class="emp"><a href="#">Employer</a></li>
+			<li><a href="about.html">About Us</a></li>
+			
+			<li class="last"><a href="register.html">Register</a></li>
+		</ul>
+		
+	
+    </div>
+    <img src="images/B.png"class="background"style="height: 950px;"/> 
+    <img class="applyimg" src="images/ap.jpg">
+    <form class="form" action="apply.php" method="post" enctype="multipart/form-data">
+First name: <input type="text" name="FirstName" id="myInput" required><br><br>
+Last name: <input type="text" name="LastName" id="myInput" required><br><br>
+Date of birth: <input type="date" name="myDate" value="1998-04-01" required><br><br>
+contact info:<br><br>
+email:    <input type="email"  style="width: 210px;" name="email" id="myInput" required><br><br> Telephone: <input type="number" style="width: 165px;" name="tel" required><br><br> Address: <input type="text" style="width: 185px;"  name="address" required><br><br>
+
+         <label class="clabel">Add your resume<br><input type="file" name="myfile" id="myfile"></label> 
+       <br><br>       
+     Choose your job:<br>
+        <label>Field:</label>
+        <select name="fields" id="field_list" onChange="getName(this.value);">
+            <option value="">Select Field</option>
+            <?php
+               $sql = "SELECT * FROM companyform GROUP BY Field";
+               $result = $conn->query($sql);
+            while($row = $result->fetch_assoc()){
+                ?>
+                <option value="<?php echo $row["Field"];?>"> <?php echo $row["Field"];?>  </option>
+            <?php
+            }
+            ?>
+        </select>
+        
+        <label>Company:</label>
+        <select name="company" id="name_list" onChange="getPosition(this.value);">
+            <option value="">Select Company</option>
+            <?php
+               $sql = "SELECT * FROM companyform GROUP BY Name";
+               $result = $conn->query($sql);
+            while($row = $result->fetch_assoc()){
+                ?>
+                <option value="<?php echo $row["Name"];?>"> <?php echo $row["Name"];?>  </option>
+            <?php
+            }
+            ?>
+        </select>
+            
+             <label>Position:</label>
+        <select name="position" id="position_list">
+            <option value="">Select Position</option>
+        </select><br><br>
+<input type="submit" value="Submit"><button class="clear" onclick="document.getElementById('myInput').value = ''">Clear input</button>
+</form>
+ <div id="footer">
+        
+        
+    </div>
+    </body>
+    
+</html>
