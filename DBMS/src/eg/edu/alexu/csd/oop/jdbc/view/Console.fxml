@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="600.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="eg.edu.alexu.csd.oop.jdbc.view.ConsoleController">
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <JFXTextArea fx:id="SQLStatement" layoutX="18.0" layoutY="69.0" promptText="Write Your Query" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+            <JFXButton fx:id="executeBtn" layoutX="18.0" layoutY="264.0" onAction="#executeQuery" text="Execute" />
+            <JFXButton fx:id="addBtn" layoutX="75.0" layoutY="264.0" onAction="#addToBatch" text="Add" />
+            <JFXButton fx:id="executeAllBtn" layoutX="113.0" layoutY="264.0" onAction="#executeBatch" text="Execute All" />
+            <Label fx:id="errorLabel" layoutX="187.0" layoutY="268.0" text="Warning : Wrong SQL Statement " textFill="#e10000" visible="false" />
+            <JFXTextField fx:id="dbName" layoutX="10.0" layoutY="14.0" promptText="Database Name" />
+            <JFXButton fx:id="closeBtn" layoutX="374.0" layoutY="264.0" onAction="#close" text="Close Connection" />
+            <TextArea fx:id="logger" editable="false" layoutX="18.0" layoutY="382.0" prefHeight="200.0" prefWidth="465.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+            <Label layoutX="18.0" layoutY="362.0" text="Logger :">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="createBtn" layoutX="161.0" layoutY="14.0" onAction="#createDB" text="Create" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
